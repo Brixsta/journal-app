@@ -1,38 +1,174 @@
-.App {
-  text-align: center;
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP&display=swap');
+
+* {
+  padding: 0;
+  margin: 0;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.wrapper {
+  height: 100vh;
+  width: 100vw;
+  background-color: whitesmoke;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.journal-container {
+  width: 40%;
+  height: 82%;
+  border: 1px solid rgba(0,0,0,.3);
+  box-sizing: border-box;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.list-item-container {
+  position: relative;
+}
+
+
+.journal-canvas {
+  width: 27.3rem;
+  height: 100%;
+  background-color: rgb(230, 230, 230);
+  padding: 1rem;
+  box-sizing: border-box;
+  padding-bottom: 0rem;
+}
+
+.journal-canvas-form {
+  width: 100%;
+  height: 100%;
   display: flex;
   flex-direction: column;
-  align-items: center;
+  justify-content: space-around;
+  margin: 0;
+  padding: 0;
+}
+
+.journal-canvas-text {
+  width: 100%;
+  height: 90%;
+  margin: auto;
+  padding: 1rem;
+  box-sizing: border-box;
+  resize: none;
+  border: 1px solid rgba(0,0,0,.3);
+  margin: 0;
+  font-family: 'Noto Sans JP', sans-serif;
+}
+
+.save-button, .add-button {
+  padding: .75rem;
+  cursor: pointer;
+  border: 0;
+  width: 10rem;
+  background-color: rgb(220, 220, 220);
+  display: block;
+  margin: .5rem .25rem;
+  border-radius: 5px;
+  border: solid 1px rgba(0,0,0,.3);
+  transition: all .2s ease-in-out;
+  font-family: 'Noto Sans JP', sans-serif;
+}
+
+.save-button:hover, .add-button:hover {
+  background-color: rgba(200,200,200);
+}
+
+.journal-controls {
+  display: flex;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+}
+
+.journal-canvas-text:focus {
+  outline: none;
+}
+
+.journal-canvas-text:active {
+  border: 1px solid rgba(0,0,0,.3);
+}
+
+.journal-title {
+  width: 100%;
+  height: 5%;
+  background: #36D1DC;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #5B86E5, #36D1DC);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #5B86E5, #36D1DC); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem 0rem;
+  user-select: none;
   color: white;
+  font-family: 'Noto Sans JP', sans-serif;
 }
 
-.App-link {
-  color: #61dafb;
+.journal-content {
+  width: 100%;
+  height: 75%;
+  display: flex;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.previous-posts-container {
+  width: 35%;
+  height: 100%;
+  background-color: rgb(230, 230, 230);
+  box-sizing: border-box;
+  border-right: 1px solid rgba(0,0,0,.3);
+  overflow-y: auto;
+  padding: .1rem;
 }
+
+.previous-post-list {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+
+.previous-post-item {
+  width: 90%;
+  background-color: #427eff;
+  display: flex;
+  padding: .75rem;
+  box-sizing: border-box;
+  margin: 1rem;
+  cursor: pointer;
+  border-radius: 5px;
+  user-select: none;
+  color: white;
+  transition: all .2s ease-in-out;
+  font-family: 'Noto Sans JP', sans-serif;
+  position: relative;
+}
+
+.previous-post-item:hover {
+  background-color: rgb(0, 51, 152);
+}
+
+
+.journal-footer {
+  background: #36D1DC;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #5B86E5, #36D1DC);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #5B86E5, #36D1DC); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  height: 15.3%;
+}
+
+.delete-button {
+  font-family: 'Noto Sans JP', sans-serif;
+  font-size: .8rem;
+  background-color: red;
+  padding: 0;
+  margin: 0;
+  position: absolute; 
+  top: 15%;
+  right: 3%;
+  padding: .25rem;  
+  border-top-right-radius: 4px;
+  border-bottom-left-radius: 4px;
+  cursor: pointer;
+  color: white;
+  user-select: none;
+}
+
